@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
-  <source>
-    <originFiles name="fir.cpp" path="E:\Git_Workspace\HighLevelSynthesis\Parallel_Programming_for_FPGAs\Chapter2_FIR\version1\fir.cpp"/>
-  </source>
-  <testbench>
-    <originFiles name="host.cpp" path="E:\Git_Workspace\HighLevelSynthesis\Parallel_Programming_for_FPGAs\Chapter2_FIR\version1\host.cpp"/>
-  </testbench>
-</autopilotfilemapping:AutoPilotFileMapping>

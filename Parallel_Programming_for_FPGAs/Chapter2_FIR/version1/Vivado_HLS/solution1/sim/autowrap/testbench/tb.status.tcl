@@ -1,1 +1,0 @@
-set ::AESL_AUTOSIM::gTopFileName fir.cpp_pre.cpp.tb.cpp
