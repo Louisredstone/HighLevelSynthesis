@@ -1,4 +1,5 @@
-#include "fir.cpp"
+//#include "fir.cpp"
+#include <iostream>
 using namespace std;
 void main(int argc,char* argv[]){
     const int L=128;
@@ -21,7 +22,7 @@ void main(int argc,char* argv[]){
                 16032,6459,25563,49246,49014,30182,24489,34773,46148,39189,27483,30528,37618,36011,21180,10688,
                 };
     int y_[L]={0};
-    int* py_=y;
+    int* py_=y_;
     for(int i=0;i<L;++i){
         fir(py_,x[i]);
         ++py_;
@@ -29,8 +30,10 @@ void main(int argc,char* argv[]){
     int err_cnt=0;
     for(int i=0;i<L;++i){
         if(y[i]!=y_[i]){
-            cout<<"Fault at y["<<i<<"]"<<endl;
+            cout<<"Fault at y["<<i<<"]: "<<y[i]<<"!="<<y_[i]<<endl;
             ++err_cnt;
+        }else{
+            cout<<"y["<<i<<"]=="<<y[i]<<endl;
         }
     }
     if(err_cnt==0){
