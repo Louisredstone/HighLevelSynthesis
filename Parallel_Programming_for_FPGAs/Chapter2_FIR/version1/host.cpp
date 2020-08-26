@@ -39,6 +39,6 @@ void main(int argc,char* argv[]){
     if(err_cnt==0){
         cout<<"No fault occurs!"<<endl<<"Test passed."<<endl;
     }else{
-        cout<<err_cnt<<"fault(s) occur!"<<endl<<"Test NOT passed!"<<endl;
+        cout<<err_cnt<<" fault(s) occur!"<<endl<<"Test NOT passed!"<<endl;
     }
 }
