@@ -23,8 +23,22 @@ pipe_load(read)耗时较长的原因可能是和它是和内存进行通信的�
 ### experiment2 SimpleAdd
 数据类型为char时：
 <img src="../resources/2.4.png" style="zoom:50%" />
-数据类型为int时：
 
+数据类型为short时：
+<img src="../resources/2.5.png" style="zoom:50%" />
+
+数据类型为int时：
+<img src="../resources/2.6.png" style="zoom:50%" />
+
+数据类型为long时：
+<img src="../resources/2.7.png" style="zoom:50%" />
+
+数据类型为long long时：
+<img src="../resources/2.8.png" style="zoom:50%" />
+
+不难发现：<br>
+- 此处使用的int类型即long类型
+- 这样的类型切换只影响组合逻辑的耗时，不影响时钟周期的消耗。
 
 ### version1:
 <!-- ![Picture](../resources/chapter2-version1.png){:height="50%" width="50%"} -->
