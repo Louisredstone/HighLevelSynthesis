@@ -36,11 +36,43 @@ pipe_load(read)耗时较长的原因可能是和它是和内存进行通信的�
 数据类型为long long时：
 <img src="../resources/2.8.png" style="zoom:30%" />
 
+数据类型为float时：
+<img src="../resources/2.14.png" style="zoom:50%" />
+
+数据类型为double时：
+<img src="../resources/2.15.png" style="zoom:50%" />
+
 不难发现：<br>
 - 此处使用的int类型即long类型
-- 这样的类型切换只影响组合逻辑的耗时，不影响时钟周期的消耗。
+- 有些类型切换只影响组合逻辑的耗时，不影响时钟周期的消耗。而改为float和double就会产生周期延时。
+
+### experiment3 SimpleMul
+数据类型为char时：
+<img src="../resources/2.9.png" style="zoom:50%" />
+
+数据类型为short时：
+<img src="../resources/2.10.png" style="zoom:50%" />
+
+数据类型为int时：
+<img src="../resources/2.11.png" style="zoom:50%" />
+
+数据类型为long时：
+<img src="../resources/2.12.png" style="zoom:50%" />
+
+数据类型为long long时：
+<img src="../resources/2.13.png" style="zoom:50%" />
+
+数据类型为float时：
+<img src="../resources/2.16.png" style="zoom:50%" />
+
+数据类型为double时：
+<img src="../resources/2.17.png" style="zoom:50%" />
+
+当数据类型为long long时出现了意外。此前的latency和interval都是0，而到了long long这里就变成了4，可见由于DSP乘法位宽的限制，系统切分了long long数据，从而形成了4个周期的延时。
+float和double的情况和加法一致。
 
 ### version1:
 <img src="../resources/2.1.png" style="zoom:30%" />
 
 ### version2:
+<img src="../resources/2.18.png" style="zoom:50%" />
