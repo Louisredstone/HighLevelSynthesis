@@ -24,6 +24,7 @@ void fir(data_t *y,data_t x){
     }
     shift_reg[0] = x;
 
+    acc=0;
     MAC:
     for(i = N - 1;i >= 3;i -= 4){
         acc += shift_reg[i] * C[i] +
