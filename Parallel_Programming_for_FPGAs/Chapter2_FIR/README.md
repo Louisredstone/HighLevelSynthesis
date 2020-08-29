@@ -77,8 +77,11 @@ version7在MAC循环中添加了pipeline设计，比version3的优化方式效�
 ```
 acc += shift_reg[i] * C[i];
 ```
-本身就包含shift_reg_read、C_read、*、acc_write等多个步骤，详见Analysis图。（Analysis图在屏幕右上角切换，平常默认是Synthesis模式）
+本身就包含shift_reg_read、C_read、*、acc_write等多个步骤，详见Analysis图：
+
 <img src="../resources/2.39.png" style="zoom:67%" />
+
+（Analysis图在屏幕右上角切换，平常默认是Synthesis模式）
 
 <details>
   <summary>原文刊误</summary>
