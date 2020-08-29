@@ -1,6 +1,6 @@
 # FIR
 ------
-### experiment1 FIFO:
+### **Experiment1 FIFO**
 <img src="../resources/2.2.png"/>
 <img src="../resources/2.3.png"/>
 
@@ -21,7 +21,7 @@ void fifo(int x,int *y){
 pipe_load(read)耗时较长的原因可能是和它是和内存进行通信的，而不是DDR、BRAM这种存储设备。
 
 ------
-### experiment2 SimpleAdd
+### **Experiment2 SimpleAdd**
 |char|short|int|long|
 |-|-|-|-|
 |<img src="../resources/2.4.png" style="zoom:30%" />|<img src="../resources/2.5.png" style="zoom:30%" />|<img src="../resources/2.6.png" style="zoom:30%" />|<img src="../resources/2.7.png" style="zoom:30%" />|
@@ -34,7 +34,7 @@ pipe_load(read)耗时较长的原因可能是和它是和内存进行通信的�
 - 有些类型切换只影响组合逻辑的耗时，不影响时钟周期的消耗。而改为float和double就会产生周期延时。
 
 ------
-### experiment3 SimpleMul
+### **Experiment3 SimpleMul**
 |char|short|int|long|
 |-|-|-|-|
 |<img src="../resources/2.9.png" style="zoom:50%" />|<img src="../resources/2.10.png" style="zoom:50%" />|<img src="../resources/2.11.png" style="zoom:50%" />|<img src="../resources/2.12.png" style="zoom:50%" />|
@@ -47,6 +47,7 @@ pipe_load(read)耗时较长的原因可能是和它是和内存进行通信的�
 float和double的情况和加法一致。
 
 ------
+### **FIR滤波器**
 |version1|version2|version3|version4|version5|
 |-|-|-|-|-|
 |<img src="../resources/2.1.png" style="zoom:40%" />|<img src="../resources/2.18.png" style="zoom:67%" />|<img src="../resources/2.19.png" style="zoom:67%" />|<img src="../resources/2.23.png" style="zoom:67%" />|<img src="../resources/2.30.png" style="zoom:67%" />|
@@ -82,6 +83,13 @@ acc += shift_reg[i] * C[i];
 <img src="../resources/2.39.png" style="zoom:67%" />
 
 （Analysis图在屏幕右上角切换，平常默认是Synthesis模式）
+
+------
+### **复数FIR滤波器**
+
+略（其实就是懒，没做）
+
+------
 
 <details>
   <summary>原文刊误</summary>
