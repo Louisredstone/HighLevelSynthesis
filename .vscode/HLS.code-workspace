@@ -2,6 +2,9 @@
     "folders":[
         {
             "path": ".."
+        },
+        {
+            "path": "..\\..\\References\\pp4fpgas-cn-hls"
         }
     ],
     "settings": {
