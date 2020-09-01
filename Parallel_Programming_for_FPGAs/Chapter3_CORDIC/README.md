@@ -52,7 +52,8 @@ $$
 $$
 递推形式将实部虚部分别写出，可表示为
 $$x_{-1}+iy_{-1}=\omega\cdot K_m, \\
-x_{n+1}=$$
+x_{n+1}=x_n-\sigma_n\cdot y\cdot2^{-k}\\
+y_{n+1}=y_n+\sigma_n\cdot x\cdot2^{-k}$$
 
 至此，可以得出以下数学公式形式的伪代码：<br>
 $const\quad\mathbb{R}\quad K_m\leftarrow\prod_{k=0}^{m}\cfrac{1}{\sqrt{1+2^{-2k}}}$<br>
@@ -61,15 +62,23 @@ $param\quad\mathbb{C}\quad\omega$<br>
 $param\quad\mathbb{R}\quad\theta$<br>
 $\mathbb{R}\quad\sigma_{var}$<br>
 $\mathbb{C}\quad\omega_{iter}\leftarrow\omega\cdot K_m$<br>
+$(\omega_{iter}=x_{iter}+iy_{iter})$<br>
 $\mathbb{R}\quad\theta_{iter}\leftarrow0$<br>
-$for(int\quad k=0;k\lt n;++k)\{$<br>
+$for(int\quad k\leftarrow0;k\le m;++k)\{$<br>
 $\quad if(\theta_{iter}\le \theta)\quad\{$<br>
-$\quad\quad \theta_{iter}+=\alpha_k$<br>
 $\quad\quad \sigma_{var}\leftarrow1$<br>
 $\quad\}$<br>
 $\quad else\{$<br>
-$\quad\quad \theta_{iter}-=\alpha_k$<br>
 $\quad\quad \sigma_{var}\leftarrow-1$<br>
 $\quad\}$<br>
-$\quad\omega_{iter}$<br>
-$\}$
+$\quad \theta_{iter}+=\sigma_{var}\cdot\alpha_k$<br>
+$\quad\omega_{iter}\leftarrow\omega_{iter}\cdot(1+i\cdot\sigma_{var}\cdot2^{-k})$<br>
+$\quad (x_{iter}\leftarrow x_{iter}-\sigma_{var}(y_{iter}\gg k))$<br>
+$\quad (y_{iter}\leftarrow y_{iter}+\sigma_{var}(x_{iter}\gg k))$<br>
+$\}$<br>
+$return\quad\omega_{iter}$<br>
+其中“$\gg$”表示二进制右移。
+
+$K_m$和$\{\alpha_m\}$为恒量，在给定m的情况下可在计算机上一次性计算得出，无需在FPGA上多做运算。
+
+哪些数据类型可以在FPGA上使用二进制位移操作？
