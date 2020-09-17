@@ -22,9 +22,10 @@ def alpha_m(m):
         result.append(alpha)
     return result
 
-m=15
-print("float Km=",Km(m),";",sep="")
-print("float cordic_phase[",m+1,"]={",sep="",end="")
+# ----------------------------------------------------
+m=39
+print("const float Km=",Km(m),";",sep="")
+print("const float cordic_phase[",m+1,"]={",sep="",end="")
 for alpha in alpha_m(m):
     print(alpha,",",sep="",end="")
 print("\b};")
